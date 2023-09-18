@@ -22,11 +22,12 @@ function getSelectedChoiceFromUser(questionText) {
 }
 
 function playGame() {
-  const userHasCancelled = confirm("The quiz is about to begin. Are you sure you want to play?");
+  const userHasCancelled = !confirm("The quiz is about to begin. Are you sure you want to play?");
   if (userHasCancelled) {
-   return alert(`You have decided not to play`)
+     alert(`You have decided not to play`)
+    return;
   }
-
+""
   let score = 0;
 
   for (let i = 1; i !== questions.length; i++) {
@@ -37,6 +38,7 @@ function playGame() {
     const userHasCancelled = null === userChoice;
     if (userHasCancelled) {
       return alert("You've cancelled the quiz, no more questions will be shown.");
+      break;
     }
 
     const userHasAnsweredIncorrectly = userChoice !== question.correctChoice;
