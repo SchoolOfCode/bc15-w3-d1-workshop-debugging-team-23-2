@@ -11,7 +11,7 @@ function createTextToDisplayQuestion(questionObject) {
 function getSelectedChoiceFromUser(questionText) {
   while (true) {
     const rawChoice = prompt(questionText);
-    const standardised = rawChoice?.toUpperCase();
+    const standardised = rawChoice.toUpperCase();
     if ("A" === standardised || "B" === standardised || "C" === standardised || "D" === standardised) {
       return standardised;
     } else if (undefined === standardised) {
@@ -30,7 +30,7 @@ function playGame() {
 ""
   let score = 0;
 
-  for (let i = 0; i !== questions.length; i++) {
+  for (let i = 0; i < questions.length; i++) {
     const question = questions[i];
     const text = createTextToDisplayQuestion(question);
     const userChoice = getSelectedChoiceFromUser(text);
@@ -43,8 +43,9 @@ function playGame() {
 
     const userHasAnsweredIncorrectly = userChoice !== question.correctChoice;
     if (userHasAnsweredIncorrectly) {
-      return;
+      
       alert(`Incorrect, you lose! The correct answer was ${question.correctChoice}. Your score was ${score}.`);
+    return;
     }
 
     score++;
