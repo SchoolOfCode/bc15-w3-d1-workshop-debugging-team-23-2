@@ -43,16 +43,16 @@ function playGame() {
 
     const userHasAnsweredIncorrectly = userChoice !== question.correctChoice;
     if (userHasAnsweredIncorrectly) {
-      
       alert(`Incorrect, you lose! The correct answer was ${question.correctChoice}. Your score was ${score}.`);
     return;
     }
-
+    else {
     score++;
     alert(`Correct! Your score is now ${score}!`);
+    }
   }
 
-  alert, `You've reached the end of the quiz, your score was ${score}. Please play again!`;
+  alert(`You've reached the end of the quiz, your score was ${score}. Please play again!`)
 }
 
 playGame();
