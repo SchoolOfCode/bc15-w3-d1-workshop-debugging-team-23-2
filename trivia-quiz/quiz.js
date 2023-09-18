@@ -30,7 +30,7 @@ function playGame() {
 ""
   let score = 0;
 
-  for (let i = 1; i !== questions.length; i++) {
+  for (let i = 0; i !== questions.length; i++) {
     const question = questions[i];
     const text = createTextToDisplayQuestion(question);
     const userChoice = getSelectedChoiceFromUser(text);
