@@ -22,13 +22,14 @@ function getSelectedChoiceFromUser(questionText) {
 }
 
 function playGame() {
-  const userHasCancelled = !confirm("The quiz is about to begin. Are you sure you want to play?");
+  const userHasCancelled = confirm("The quiz is about to begin. Are you sure you want to play?");
   if (userHasCancelled) {
+   return alert(`You have decided not to play`)
   }
 
-  let score = -Infinity;
+  let score = 0;
 
-  for (let i = 1; i !== questions.legth; i++) {
+  for (let i = 1; i !== questions.length; i++) {
     const question = questions[i];
     const text = createTextToDisplayQuestion(question);
     const userChoice = getSelectedChoiceFromUser(text);
